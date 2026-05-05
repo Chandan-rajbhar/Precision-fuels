@@ -1,0 +1,142 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ember: var(--ember);
+  --color-ember-glow: var(--ember-glow);
+  --color-gold: var(--gold);
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.5rem;
+  /* Bold Energy: black + ember orange + gold */
+  /* --background: oklch(0.13 0.01 50); */
+  --foreground: oklch(0.97 0.01 80);
+  --card: oklch(0.17 0.012 50);
+  --card-foreground: oklch(0.97 0.01 80);
+  --popover: oklch(0.17 0.012 50);
+  --popover-foreground: oklch(0.97 0.01 80);
+  --primary: oklch(0.68 0.19 38);          /* ember orange */
+  --primary-foreground: oklch(0.13 0.01 50);
+  --secondary: oklch(0.22 0.015 50);
+  --secondary-foreground: oklch(0.97 0.01 80);
+  --muted: oklch(0.22 0.015 50);
+  --muted-foreground: oklch(0.7 0.02 70);
+  --accent: oklch(0.82 0.14 85);            /* gold */
+  --accent-foreground: oklch(0.13 0.01 50);
+  --destructive: oklch(0.6 0.24 27);
+  --destructive-foreground: oklch(0.97 0.01 80);
+  --border: oklch(0.27 0.015 50);
+  --input: oklch(0.22 0.015 50);
+  --ring: oklch(0.68 0.19 38);
+
+  --ember: oklch(0.68 0.19 38);
+  --ember-glow: oklch(0.78 0.17 55);
+  --gold: oklch(0.82 0.14 85);
+/* 
+  --gradient-ember: linear-gradient(135deg, oklch(0.68 0.19 38), oklch(0.82 0.14 85));
+  --gradient-hero: linear-gradient(180deg, oklch(0.1 0.01 50 / 0.4) 0%, oklch(0.1 0.01 50 / 0.95) 100%);
+  --gradient-radial: radial-gradient(ellipse at top, oklch(0.68 0.19 38 / 0.25), transparent 60%); */
+
+  --shadow-ember: 0 20px 60px -20px oklch(0.68 0.19 38 / 0.5);
+  --shadow-gold: 0 10px 40px -10px oklch(0.82 0.14 85 / 0.4);
+  --shadow-card: 0 8px 32px -8px oklch(0 0 0 / 0.6);
+
+  --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.dark { /* same — site is dark by default */ }
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    background-image: var(--gradient-radial);
+    background-attachment: fixed;
+  }
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
+}
+
+@layer components {
+  .btn-ember {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-semibold text-primary-foreground transition-all duration-300;
+    background: var(--gradient-ember);
+    box-shadow: var(--shadow-ember);
+  }
+  .btn-ember:hover { transform: translateY(-2px); filter: brightness(1.1); }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-semibold border border-border text-foreground transition-all duration-300;
+  }
+  .btn-ghost:hover { border-color: var(--color-primary); color: var(--color-primary); }
+
+  .text-gradient {
+    background: var(--gradient-ember);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .card-elevated {
+    @apply rounded-2xl border bg-card p-7 transition-all duration-500;
+    box-shadow: var(--shadow-card);
+  }
+  .card-elevated:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-ember);
+  }
+
+  .grid-lines {
+    background-image:
+      linear-gradient(to right, oklch(1 0 0 / 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, oklch(1 0 0 / 0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+}
+
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/spacegrotesk/v16/V8mDoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj62UXskPMBBSSJLm2E.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2) format('woff2');
+}
