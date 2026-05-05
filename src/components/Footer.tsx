@@ -1,58 +1,83 @@
 import { Link } from "@tanstack/react-router";
-import { Flame, Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border mt-24 bg-card/40">
-      <div className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-4 gap-10">
-        <div>
-          <Link to="/" className="flex items-center gap-2 mb-4">
-            <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: "var(--gradient-ember)" }}>
-              <Flame className="w-5 h-5 text-primary-foreground" />
-            </div>
-            <span className="font-display font-bold text-xl">VOLTAFUEL</span>
-          </Link>
-          <p className="text-sm text-muted-foreground">Powering motion since 1998. Premium fuels engineered for performance and sustainability.</p>
-          <div className="flex gap-3 mt-5">
-            {[Facebook, Twitter, Linkedin, Instagram].map((Icon, i) => (
-              <a key={i} href="#" className="w-9 h-9 rounded-full border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-colors">
-                <Icon className="w-4 h-4" />
-              </a>
-            ))}
+    <footer className="bg-white py-12 md:py-16">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+
+        {/* LEFT SIDE */}
+        <div className="text-center md:text-left">
+          {/* Logo */}
+          <img
+            src="/src/assets/footer_image/footer_logo.png"
+            alt="Precision Fuels"
+            className="w-32 mx-auto md:mx-0 mb-4"
+          />
+
+          {/* Text */}
+          <p className="text-gray-500 text-sm leading-relaxed mb-6 max-w-md mx-auto md:mx-0">
+            Precision Fuels is a trusted fuel delivery company for boating
+            community, offering exceptional services in Miami Dade Broward
+            counties, Florida.
+          </p>
+
+          {/* Social Icons */}
+          <div className="flex justify-center md:justify-start items-center gap-5">
+            <FaFacebookF className="text-red-600 text-sm cursor-pointer hover:opacity-70" />
+            <FaTwitter className="text-red-600 text-sm cursor-pointer hover:opacity-70" />
+            <FaLinkedinIn className="text-red-600 text-sm cursor-pointer hover:opacity-70" />
+            <FaInstagram className="text-red-600 text-sm cursor-pointer hover:opacity-70" />
           </div>
         </div>
 
-        <div>
-          <h4 className="font-semibold mb-4">Company</h4>
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><Link to="/about" className="hover:text-primary">About us</Link></li>
-            <li><Link to="/services" className="hover:text-primary">Services</Link></li>
-            <li><Link to="/products" className="hover:text-primary">Products</Link></li>
-            <li><Link to="/contact" className="hover:text-primary">Contact</Link></li>
-          </ul>
-        </div>
+        {/* RIGHT SIDE */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-center sm:text-left">
 
-        <div>
-          <h4 className="font-semibold mb-4">Solutions</h4>
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li>Retail Stations</li>
-            <li>Fleet Fuel</li>
-            <li>Industrial Diesel</li>
-            <li>Renewable Energy</li>
-          </ul>
-        </div>
+          {/* Navigation */}
+          <div>
+            <h4 className="text-red-500 font-semibold mb-4">Navigation</h4>
+            <ul className="space-y-2 text-gray-400 text-sm">
+              <li className="hover:text-red-500 cursor-pointer">Home</li>
+              <li className="hover:text-red-500 cursor-pointer">About</li>
+              <li className="hover:text-red-500 cursor-pointer">Service</li>
+              <li className="hover:text-red-500 cursor-pointer">Blogs</li>
+            </ul>
+          </div>
 
-        <div>
-          <h4 className="font-semibold mb-4">Contact</h4>
-          <ul className="space-y-3 text-sm text-muted-foreground">
-            <li className="flex gap-2"><MapPin className="w-4 h-4 text-primary shrink-0 mt-0.5" />1200 Energy Blvd, Houston, TX</li>
-            <li className="flex gap-2"><Phone className="w-4 h-4 text-primary shrink-0 mt-0.5" />+1 (800) 555-FUEL</li>
-            <li className="flex gap-2"><Mail className="w-4 h-4 text-primary shrink-0 mt-0.5" />hello@voltafuel.com</li>
-          </ul>
+          {/* Licence */}
+          <div>
+            <h4 className="text-red-500 font-semibold mb-4">Licence</h4>
+            <ul className="space-y-2 text-gray-400 text-sm">
+              <li className="hover:text-red-500 cursor-pointer">Privacy Policy</li>
+              <li className="hover:text-red-500 cursor-pointer">Copyright</li>
+              <li className="hover:text-red-500 cursor-pointer">Email Address</li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="text-red-500 font-semibold mb-4">Contact</h4>
+            <ul className="space-y-2 text-gray-400 text-sm">
+              <li className="flex items-center justify-center sm:justify-start gap-2">
+                <FaPhoneAlt className="text-red-500 text-sm" />
+                123 456 7890
+              </li>
+
+              <li className="flex items-center justify-center sm:justify-start gap-2">
+                <FaEnvelope className="text-red-500 text-sm" />
+                info@precisionfuel.com
+              </li>
+
+              <li className="flex items-center justify-center sm:justify-start gap-2">
+                <FaMapMarkerAlt className="text-red-500 text-sm" />
+                Florida
+              </li>
+            </ul>
+          </div>
+
         </div>
-      </div>
-      <div className="border-t border-border py-6 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} VoltaFuel Energy Corp. All rights reserved.
       </div>
     </footer>
   );

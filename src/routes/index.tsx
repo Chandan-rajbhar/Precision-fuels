@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
+import { FaArrowRight } from "react-icons/fa";
 import {
   ArrowRight,
   Fuel,
@@ -501,57 +502,35 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="py-24 md:py-32">
-        <div className="max-w-7xl mx-auto px-6">
-          <FadeIn className="max-w-2xl mb-16">
-            <span className="text-xs uppercase tracking-widest text-primary font-semibold">
-              What we do
-            </span>
-            <h2 className="text-4xl md:text-6xl font-bold mt-3">
-              Energy across every sector.
-            </h2>
-          </FadeIn>
+      {/* Fueled section */}
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((s, i) => (
-              <FadeIn key={s.title} delay={i * 0.08}>
-                <div className="card-elevated h-full">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 bg-primary/10 text-primary">
-                    <s.icon className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-xl font-semibold">{s.title}</h3>
-                  <p className="text-sm text-muted-foreground mt-2">{s.desc}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
+      <section className="relative w-full h-[200px] md:h-[150px]">
+
+        {/* Background Image */}
+        <img
+          src="../../src/assets/fuel_img.png" // replace with your image path
+          alt="fuel"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/50"></div>
+
+        {/* Content */}
+        <div className="relative max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
+
+          {/* Text */}
+          <h2 className="text-white text-2xl md:text-5xl font">
+            Ready To Get Fueled Up?
+          </h2>
+
+          {/* Button */}
+          <button className="flex items-center gap-2 border border-white text-white px-5 py-2 rounded-full hover:bg-white hover:text-black transition">
+            Get Started <FaArrowRight />
+          </button>
+
         </div>
-      </section>
 
-      {/* CTA */}
-      <section className="py-24 md:py-32 text-center">
-        <div className="max-w-5xl mx-auto px-6">
-          <FadeIn>
-            <Globe className="w-12 h-12 mx-auto text-primary mb-6" />
-            <h2 className="text-4xl md:text-6xl font-bold">
-              Ready to power your operation?
-            </h2>
-
-            <p className="mt-5 text-lg text-muted-foreground max-w-2xl mx-auto">
-              Join thousands of businesses that trust us for reliable energy delivery.
-            </p>
-
-            <div className="mt-10 flex justify-center gap-4 flex-wrap">
-              <Link to="/contact" className="btn-ember flex items-center gap-2">
-                Request a quote <ArrowRight className="w-4 h-4" />
-              </Link>
-
-              <Link to="/about" className="btn-ghost">
-                About Us
-              </Link>
-            </div>
-          </FadeIn>
-        </div>
       </section>
     </>
   );
