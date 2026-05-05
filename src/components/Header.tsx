@@ -18,7 +18,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full">
 
       {/* TOP BAR */}
-      <div className="bg-red-600 text-white text-sm">
+      <div className="bg-red-600 text-white text-sm md:gap-1">
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-8">
           
           <div className="flex items-center gap-6">
@@ -26,7 +26,7 @@ export function Header() {
               <img src="../../src/assets/phone_number.png" alt="" />
             </span>
 
-            <span className="flex items-center gap-2">
+            <span className="flex items-center gap-2 ">
               <img src="../../src/assets/mail.png" alt="" />
               info@precisionfuel.com
             </span>

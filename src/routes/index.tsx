@@ -26,6 +26,28 @@ const services = [
   { icon: Leaf, title: "Renewable Fuels", desc: "Biofuels, hydrogen and EV charging for the transition era." },
 ];
 
+const testimonials = [
+  {
+    text: "Fuel delivery used to be a constant bottleneck for our fleet operations. Since switching to this service, we’ve eliminated unnecessary downtime.",
+    name: "Sarah Mitchell",
+    role: "Property Manager at Mitchell Properties",
+    initials: "SM",
+  },
+  {
+    text: "This service has made it incredibly easy to ensure every site is stocked without delays.",
+    name: "James Chen",
+    role: "Real Estate Investor at JC Investments",
+    initials: "JC",
+  },
+  {
+    text: "The reliability of this fuel delivery solution is unmatched. We no longer waste hours sending vehicles to fuel stations.",
+    name: "Maria Rodriguez",
+    role: "Independent Landlord",
+    initials: "SM",
+  },
+];
+
+
 function HomePage() {
   return (
     <>
@@ -88,8 +110,8 @@ function HomePage() {
         </div>
       </section>
 
-
-      <section className="py-12 md:py-16 border-y border-border bg-[#F0F0F0]">
+      {/* Abouts Page */}
+      <section className="py-6 md:py-16 border-y border-border bg-[#F0F0F0]">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
 
           {/* LEFT CONTENT */}
@@ -155,7 +177,7 @@ function HomePage() {
             <div className="mt-10 grid md:grid-cols-3 gap-8">
 
               {/* CARD 1 */}
-              <div className="bg-white border rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
+              <div className="bg-white  rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
                 <img
                   src="../../src/assets/Request_Fuel.png"
                   alt="Request Fuel"
@@ -164,7 +186,7 @@ function HomePage() {
               </div>
 
               {/* CARD 2 */}
-              <div className="bg-white border rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
+              <div className="bg-white  rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
                 <img
                   src="../../src/assets/Fuel_dispatch.png"
                   alt="Fuel Dispatch"
@@ -173,7 +195,7 @@ function HomePage() {
               </div>
 
               {/* CARD 3 */}
-              <div className="bg-white border rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
+              <div className="bg-white  rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
                 <img
                   src="../../src/assets/fuel-deliverd.png"
                   alt="Fuel Delivered"
@@ -186,7 +208,214 @@ function HomePage() {
         </section>
       </section>
 
-      {/* SERVICES */}
+      {/* Reliable Fueling Solutions*/}
+      <section className="py-5 md:py-10 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+
+          {/* Top Center Content */}
+          <div className="text-center max-w-3xl mx-auto">
+            <span className="inline-block px-4 py-1 text-sm rounded-full border border-red-500 text-red-500 mb-4">
+              Why Choose Us
+            </span>
+
+            <h2 className="text-4xl md:text-5xl font-bold text-red-600">
+              Reliable Fueling Solutions
+            </h2>
+
+            <p className="mt-4 text-[#00000099] text-lg">
+              Engineered fueling operations designed for reliability, safety,
+              and efficient marine logistics.
+            </p>
+          </div>
+
+          {/* Bottom Grid */}
+          <div className="mt-16 grid md:grid-cols-2 gap-12 items-center">
+
+            {/* Left Image */}
+            <div>
+              <img
+                src="../../src/assets/team-collaboration.png"
+                alt="Yacht fueling"
+                className="rounded-2xl w-full h-[420px] object-cover shadow-lg"
+              />
+            </div>
+
+            {/* Right Content */}
+            <div>
+              <span className="inline-block px-4 py-1 text-sm rounded-full border border-red-500 text-red-500 mb-4">
+                The Competitive Edge
+              </span>
+
+              <h3 className="text-3xl md:text-4xl text-black leading-tight">
+                Marine Precision Engineering <br /> Every Gallon
+              </h3>
+
+              {/* Features */}
+              <div className="mt-6 space-y-6">
+
+                <div className="flex gap-3">
+                  <div className="text-red-500 mt-1"><img src="../../src/assets/Fast_turnaround.png" alt="" /></div>
+                  <div>
+                    <p className="font-semibold text-black">Fast turnaround</p>
+                    <p className="text-sm text-black">
+                      Response times that set the industry standard for coastal refueling.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-3">
+                  <div className="text-red-500 mt-1"><img src="../../src/assets/Reliable_scheduling.png" alt="" /></div>
+                  <div>
+                    <p className="font-semibold text-black">Reliable scheduling</p>
+                    <p className="text-sm text-black">
+                      Automated reminders and precise arrival windows for your convenience.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-3">
+                  <div className="text-red-500 mt-1"><img src="../../src/assets/Competitive_pricing.png" alt="" /></div>
+                  <div>
+                    <p className="font-semibold text-black">Competitive pricing</p>
+                    <p className="text-sm text-black">
+                      Direct-to-consumer rates that bypass marina markups.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-3">
+                  <div className="text-red-500 mt-1"><img src="../../src/assets/Safety_compliant.png" alt="" /></div>
+                  <div>
+                    <p className="font-semibold text-black">Safety compliant</p>
+                    <p className="text-sm text-black">
+                      Strict adherence to USCG and environmental protection protocols.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/*  Industries We Serve */}
+
+      <section className="relative py-5 md:py-10 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+
+          {/* Top Content */}
+          <div className="max-w-2xl">
+            <span className="inline-block text-xs px-4 py-1 border border-red-500 text-red-500 rounded-full font-medium">
+              Industries We Serve
+            </span>
+
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-red-600 mt-5 leading-tight">
+              Fuel Solutions Built for Every Industry
+            </h2>
+
+            <p className="text-gray-500 mt-4 text-sm sm:text-base leading-relaxed">
+              We support a wide range of industries with reliable, scalable fuel
+              delivery services.
+            </p>
+          </div>
+
+          {/* Images Section */}
+          <div className="mt-10 flex flex-col md:flex-row items-center justify-between">
+            <div className="w-full md:w-2/2">
+              <img
+                src="../../src/assets/research-radar-fader.png"
+                alt=""
+                className="w-full h-90"
+              />
+            </div>
+
+            <div className="w-full md:w-1/2">
+              <img
+                src="../../src/assets/Gemini_Generated_Image_tf79kztf79kztf79 1.png"
+                alt=""
+                className="h-75 w-60"
+              />
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* Testimonials */}
+
+      <section className="py-10 bg-[#F5F5F5]">
+        <div className="max-w-7xl mx-auto px-6 text-center p-8 rounded-xl">
+
+          {/* Top Label */}
+          <span className="inline-block px-4 py-1.5 text-sm border rounded-full text-red-500 border-red-400 mb-4">
+            Testimonials
+          </span>
+
+          {/* Heading */}
+          <h2 className="text-3xl md:text-4xl font-semibold text-red-600">
+            What Customers Say
+          </h2>
+
+          <p className="mt-2 text-gray-500 max-w-2xl mx-auto">
+            What our customer says about our efficient fuel delivery services and our dedicated team in action.
+          </p>
+
+          {/* Cards */}
+          <div className="mt-10 grid md:grid-cols-3 gap-6 text-left items-stretch">
+            {testimonials.map((item, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition flex flex-col h-full"
+              >
+
+                {/* Top Content */}
+                <div>
+                  {/* Quote Icon */}
+                  <div className="text-red-500 text-2xl mb-2">
+                    <img
+                      src="../../src/assets/Column_img.png"
+                      alt="quote"
+                      className="w-8"
+                    />
+                  </div>
+
+                  {/* Text */}
+                  <p className="text-black text-sm leading-relaxed">
+                    {item.text}
+                  </p>
+                </div>
+
+                {/* Bottom Content */}
+                <div className="mt-auto">
+                  {/* Divider */}
+                  <div className="my-4 border-t border-gray-200"></div>
+
+                  {/* User */}
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 flex items-center justify-center rounded-full bg-red-100 text-red-600 font-semibold text-sm">
+                      {item.initials}
+                    </div>
+
+                    <div>
+                      <h4 className="text-sm font-semibold text-black">
+                        {item.name}
+                      </h4>
+                      <p className="text-xs text-gray-500">
+                        {item.role}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+
       <section className="py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-6">
           <FadeIn className="max-w-2xl mb-16">
