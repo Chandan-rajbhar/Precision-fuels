@@ -47,6 +47,26 @@ const testimonials = [
   },
 ];
 
+const blogs = [
+  {
+    title: "The Future of Fueling: Why On-Demand Fuel Delivery Is Transforming",
+    desc: "Traditional fueling methods are no longer efficient for modern fleet-driven businesses...",
+    time: "5 min read",
+    color: "bg-blue-500",
+  },
+  {
+    title: "How Fuel Delivery Services Help Reduce Operational Costs for Businesses",
+    desc: "Fuel expenses are one of the biggest operational costs for fleet-based businesses...",
+    time: "5 min read",
+    color: "bg-orange-500",
+  },
+  {
+    title: "Safety and Compliance in Fuel Delivery: What Businesses Need to Know",
+    desc: "Fuel handling requires strict safety protocols and regulatory compliance...",
+    time: "5 min read",
+    color: "bg-purple-500",
+  },
+];
 
 function HomePage() {
   return (
@@ -415,6 +435,71 @@ function HomePage() {
         </div>
       </section>
 
+      {/* Blog section */}
+      <section className="py-16 bg-[#FFFFFF]">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+
+          {/* Top Label */}
+          <span className="inline-block px-4 py-1 text-sm border rounded-full text-red-500 border-red-400 mb-4">
+            Blogs
+          </span>
+
+          {/* Heading */}
+          <h2 className="text-3xl md:text-4xl font-semibold text-red-600">
+            Fueling Insights
+          </h2>
+
+          <p className="mt-3 text-gray-500 max-w-2xl mx-auto">
+            Explore insights, trends, and strategies shaping the future of fuel delivery and fleet efficiency.
+          </p>
+
+          {/* Cards */}
+          <div className="mt-12 grid md:grid-cols-3 gap-6 text-left items-stretch">
+            {blogs.map((item, index) => (
+              <div
+                key={index}
+                className="bg-[#F9F9F9] border border-gray-200 rounded-2xl p-6 flex flex-col justify-between h-full hover:-translate-y-1 hover:shadow-md transition"
+              >
+
+                {/* Top */}
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className={`w-3 h-3 rounded-full ${item.color}`}></span>
+                    <span className="text-xs text-gray-400">
+                      {item.time}
+                    </span>
+                  </div>
+
+                  <h3 className="text-lg font-semibold text-black leading-snug">
+                    {item.title}
+                  </h3>
+                </div>
+
+                {/* Bottom */}
+                <div className="mt-6 flex items-end justify-between">
+
+                  <p className="text-sm text-gray-500 leading-relaxed max-w-[70%]">
+                    {item.desc}
+                  </p>
+
+                  <button
+                    className={`flex items-center justify-center rounded-full transition
+              ${index === 0
+                        ? "bg-red-600 text-white w-14 h-10"
+                        : "border border-red-500 text-red-500 w-12 h-10 hover:bg-red-500 hover:text-white"
+                      }`}
+                  >
+                    →
+                  </button>
+
+                </div>
+
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
 
       <section className="py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-6">
