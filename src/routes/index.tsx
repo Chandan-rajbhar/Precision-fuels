@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 
 import heroImg from "@/assets/hero-station.jpg";
-import nozzleImg from "@/assets/nozzle.jpg";
+import nozzleImg from "@/assets/nozzle.png";
 import { FadeIn } from "@/components/Section";
 
 export const Route = createFileRoute("/")({
@@ -88,6 +88,104 @@ function HomePage() {
         </div>
       </section>
 
+
+      <section className="py-12 md:py-16 border-y border-border bg-[#F0F0F0]">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+
+          {/* LEFT CONTENT */}
+          <div>
+            <Link
+              to="/products"
+              className="inline-block px-4 py-1.5 text-sm text-black border rounded-full mb-4 hover:bg-primary hover:text-white transition"
+            >
+              About Us
+            </Link>
+
+            <h2 className="text-4xl text-black font-semibold leading-tight">
+              Welcome To Precision Fuels. <br />
+              Fuel On Your Time.
+            </h2>
+
+            <p className="mt-5 text-[#00000099] text-lg leading-relaxed max-w-xl">
+              Precision Fuels is a trusted fuel delivery company for boating
+              community, offering exceptional services in Miami Dade Broward counties,
+              Florida. Our journey began over a year ago with a vision to simplify
+              fueling experiences for boat owners and operators.
+
+              <br /><br />
+
+              What sets us apart is our commitment to punctuality, reliability, and
+              personalized service. As a family-owned boat diesel and fuel provider in
+              Miami Dade County, we prioritize building strong relationships with our
+              customers.
+            </p>
+          </div>
+
+          {/* RIGHT IMAGE */}
+          <div className="relative rounded-3xl overflow-hidden">
+            <img
+              src={nozzleImg}
+              alt="Fuel nozzle"
+              className="w-full h-[420px] md:h-[520px] object-cover"
+            />
+            <div className="absolute inset-0 ring-1 ring-black/10 rounded-3xl" />
+          </div>
+
+        </div>
+
+        <section className="py-5 bg-background">
+          <div className="max-w-7xl mx-auto px-6 text-center">
+
+            {/* TOP LABEL */}
+            <span className="inline-block px-4 py-1.5 text-sm border rounded-md text-black mb-4">
+              How It Works
+            </span>
+
+            {/* HEADING */}
+            <h2 className="text-3xl md:text-4xl text-black font-semibold">
+              Get Started in 3 Simple Steps
+            </h2>
+
+            <p className="mt-3 text-[#00000099] max-w-2xl mx-auto">
+              Get started in minutes, not hours. Our streamlined onboarding process gets you up and running quickly.
+            </p>
+
+
+            {/* CARDS */}
+            <div className="mt-10 grid md:grid-cols-3 gap-8">
+
+              {/* CARD 1 */}
+              <div className="bg-white border rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
+                <img
+                  src="../../src/assets/Request_Fuel.png"
+                  alt="Request Fuel"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* CARD 2 */}
+              <div className="bg-white border rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
+                <img
+                  src="../../src/assets/Fuel_dispatch.png"
+                  alt="Fuel Dispatch"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* CARD 3 */}
+              <div className="bg-white border rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
+                <img
+                  src="../../src/assets/fuel-deliverd.png"
+                  alt="Fuel Delivered"
+                  className="w-full mt-6"
+                />
+              </div>
+
+            </div>
+          </div>
+        </section>
+      </section>
+
       {/* SERVICES */}
       <section className="py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-6">
@@ -113,61 +211,6 @@ function HomePage() {
               </FadeIn>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* SPLIT SECTION */}
-      <section className="py-24 md:py-32 border-y border-border bg-card/30">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-
-          <FadeIn>
-            <div className="relative rounded-3xl overflow-hidden">
-              <img
-                src={nozzleImg}
-                alt="Fuel nozzle"
-                className="w-full h-[560px] object-cover"
-              />
-              <div className="absolute inset-0 ring-1 ring-white/10 rounded-3xl" />
-            </div>
-          </FadeIn>
-
-          <FadeIn delay={0.15}>
-            <span className="text-xs uppercase tracking-widest text-primary font-semibold">
-              Engineered formula
-            </span>
-
-            <h2 className="text-4xl md:text-5xl font-bold mt-3">
-              Cleaner combustion.{" "}
-              <span className="text-gradient">Maximum power.</span>
-            </h2>
-
-            <p className="mt-5 text-muted-foreground text-lg">
-              Our proprietary VOLTA-9X additive package reduces engine deposits
-              while boosting fuel efficiency and performance.
-            </p>
-
-            <div className="mt-8 space-y-4">
-              {[
-                { icon: Shield, t: "Top Tier certified", d: "Exceeds OEM standards" },
-                { icon: Leaf, t: "Lower emissions", d: "Reduced environmental impact" },
-                { icon: Award, t: "Performance grade", d: "Optimized for modern engines" },
-              ].map((f) => (
-                <div key={f.t} className="flex gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
-                    <f.icon className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="font-semibold">{f.t}</div>
-                    <div className="text-sm text-muted-foreground">{f.d}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <Link to="/products" className="btn-ember mt-10 inline-flex items-center gap-2">
-              View products <ArrowRight className="w-4 h-4" />
-            </Link>
-          </FadeIn>
         </div>
       </section>
 
