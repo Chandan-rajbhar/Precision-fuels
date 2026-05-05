@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useState } from "react";
-import heroImg from "../assets/hero_section.png"
+import heroImg from "../assets/hero-station.jpg";
 import { FadeIn, PageHero } from "@/components/Section";
 import { motion } from "framer-motion";
 
