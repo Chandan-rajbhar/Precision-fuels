@@ -37,9 +37,9 @@ export function PageHero({ eyebrow, title, subtitle, image }: { eyebrow: string;
             <span className="px-6 py-3 rounded-md bg-red-600 text-white font-medium shadow-lg shadow-red-500/50 hover:bg-red-700 transition duration-300">
               {eyebrow}
             </span>
-            <span className="px-6 py-3 rounded-md ml-5 bg-gray-600 text-white font-medium shadow-md hover:bg-gray-700 transition duration-300">
+            {/* <span className="px-6 py-3 rounded-md ml-5 bg-gray-600 text-white font-medium shadow-md hover:bg-gray-700 transition duration-300">
               {eyebrow}
-            </span>
+            </span> */}
           </div>
         </motion.div>
       </div>
