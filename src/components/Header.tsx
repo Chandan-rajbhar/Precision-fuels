@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Flame, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import { FiMenu, FiX } from "react-icons/fi";
 const links = [
   { to: "/", label: "About Us" },
   { to: "/services", label: "Services" },
@@ -14,39 +14,42 @@ const links = [
 export function Header() {
   const [open, setOpen] = useState(false);
   return (
-
     <header className="sticky top-0 z-50 w-full">
-
       {/* TOP BAR */}
-      <div className="bg-red-600 text-white text-sm md:gap-1">
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-8">
-          
-          <div className="flex items-center gap-6">
+      <div className="bg-red-600 text-white text-xs sm:text-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between h-auto sm:h-8 py-1 sm:py-0">
+          {/* LEFT */}
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6">
             <span className="flex items-center gap-2">
-              <img src="../../src/assets/phone_number.png" alt="" />
+              <img src="../../src/assets/Phone_number.png" alt="" className="w-3 sm:w-4" />
+              <span className="text-xs sm:text-sm">+1 123 456 7899</span>
             </span>
 
-            <span className="flex items-center gap-2 ">
-              <img src="../../src/assets/mail.png" alt="" />
-              info@precisionfuel.com
+            <span className="flex items-center gap-2">
+              <img src="../../src/assets/mail.png" alt="" className="w-3 sm:w-4" />
+              <span className="text-xs sm:text-sm break-all sm:break-normal">
+                info@precisionfuel.com
+              </span>
             </span>
           </div>
+
           {/* RIGHT */}
-          <div>
-            <span className="cursor-pointer"><img src="../../src/assets/Instagram.png" alt="" /></span>
+          <div className="mt-1 sm:mt-0">
+            <span className="cursor-pointer">
+              <img src="../../src/assets/Instagram.png" alt="" className="w-5 sm:w-6" />
+            </span>
           </div>
-
         </div>
       </div>
 
       {/* MAIN NAV */}
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
-
           {/* LOGO */}
           <Link to="/" className="flex items-center gap-2 group">
-            <span className="font-display font-bold text-xl tracking-tight"><img src="../../src/assets/Precision_Logo.png" alt="" width={100}
-              height={60} /></span>
+            <span className="font-display font-bold text-xl tracking-tight">
+              <img src="../../src/assets/Precision_Logo.png" alt="" width={100} height={60} />
+            </span>
           </Link>
           {/* NAV LINKS */}
           <nav className="hidden md:flex items-center gap-6">
@@ -72,9 +75,11 @@ export function Header() {
             </button>
           </div>
 
-          {/* MOBILE MENU */}
-          <button className="md:hidden p-2" onClick={() => setOpen(!open)}>
-            {open ? <X /> : <Menu />}
+          <button
+            className="md:hidden p-2 text-black hover:text-gray-600 transition"
+            onClick={() => setOpen(!open)}
+          >
+            {open ? <FiX size={24} /> : <FiMenu size={24} />}
           </button>
         </div>
       </div>
@@ -103,8 +108,6 @@ export function Header() {
           </motion.div>
         )}
       </AnimatePresence>
-
     </header>
-
   );
 }
